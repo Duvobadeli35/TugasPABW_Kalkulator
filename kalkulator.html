@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.kalkulator {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+#hasil {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+    </style>
+
+    <h1>Kalkulator Sederhana</h1>
+    <div class="kalkulator">
+        <input type="text" id="angka1" placeholder="Masukkan Angka Pertama">
+        <select id="operasi">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="angka2" placeholder="Masukkan Angka Kedua">
+        <button type="button" id="hitung">Hitung</button>
+        <p id="hasil"></p>
+    </div>
+    
+<script >
+const angka1 = document.getElementById('angka1');
+const operasi = document.getElementById('operasi');
+const angka2 = document.getElementById('angka2');
+const hitung = document.getElementById('hitung');
+const hasil = document.getElementById('hasil');
+
+hitung.addEventListener('click', function() {
+    const nilai1 = parseFloat(angka1.value);
+    const nilai2 = parseFloat(angka2.value);
+    const operasiPilihan = operasi.value;
+
+    let hasilPerhitungan;
+
+    switch (operasiPilihan) {
+        case '+':
+            hasilPerhitungan = nilai1 + nilai2;
+            break;
+    }
+
+    hasil.textContent = hasilPerhitungan;
+});
+</script>
+</body>
+</html>
